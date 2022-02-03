@@ -1,0 +1,13 @@
+version: '3'
+
+vars:
+  gobin: go1.18beta2
+
+tasks:
+  examples:
+    desc: "Build the examples"
+    cmds:
+      - "mkdir -p build"
+      - "{{ .gobin }} build -o ./build/maybe-struct examples/maybe-struct.go"
+      - "{{ .gobin }} build -o ./build/result-struct examples/result-struct.go"
+      - "{{ .gobin }} build -o ./build/result-nostruct examples/result-nostruct.go"
